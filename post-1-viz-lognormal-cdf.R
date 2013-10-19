@@ -10,8 +10,8 @@ curve( ptruncnorm(q=x, a=0, mean=0, sd=sqrt(100)), from=0, to=1,
        xlab='quantile', ylab='probability')
 
 ## Add the CDF of the log-normal to the graph
-curve( plnorm(q=x, mean=1.185, sd=sqrt(1.185)), from=0, to=1, add=TRUE,
-       lwd=2, col='blue')
+curve( plnorm(q=x, mean=1.185, sd=sqrt(1.185)), from=0, to=1,
+       add=TRUE, lwd=2, col='blue')
 
 ## Draw an arrow approximately where the two CDFs cross
 arrows( x0=0.325, y0=.038, x1=0.45,  y1=.038,
@@ -28,8 +28,8 @@ curve( ptruncnorm(q=x, a=0, mean=0, sd=sqrt(100)), from=0, to=60,
         xlab='quantile', ylab='probability')
 
 ## Add the the CDF of the log-normal to the graph
-curve( plnorm(q=x, mean=1.185, sd=sqrt(1.185)), from=0, to=60, add=TRUE,
-       lwd=2, col='blue')
+curve( plnorm(q=x, mean=1.185, sd=sqrt(1.185)), from=0, to=60,
+       add=TRUE, lwd=2, col='blue')
 
 ## Draw an arrow approximately where the two CDFs cross
 arrows( x0=10, y0=.95, x1=16.6,  y1=.95,
