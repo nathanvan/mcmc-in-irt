@@ -1,6 +1,5 @@
 par(mfrow=c(2,2))
-
-    ## Graph the moments  
+    ## Graph the buggy moments  
     plot( theo.1D, emp.1D.buggy, asp=1,
           main='1D Moments -- Intentional Bug',
           xlab='Theoretical', ylab='Empirical (Buggy)')
@@ -10,7 +9,7 @@ par(mfrow=c(2,2))
           xlab='Theoretical', ylab='Empirical (Buggy)')
     abline(0,1)
 
-    ## Graph the equated ltm estimates
+    ## Graph the buggy equated ltm estimates
     plot( a.disc, equated.a.disc.buggy, asp=1,
           main="Equated ltm Item Discrimination -- Intentional Bug",
           xlab="True values", ylab="Equated ltm estimates (Buggy)")
@@ -19,5 +18,3 @@ par(mfrow=c(2,2))
           main="Equated ltm Item Difficulty -- Intentional Bug",
           xlab="True values", ylab="Equated ltm estimates (Buggy)")
         abline(0,1)
-
-par(mfrow=c(1,1))

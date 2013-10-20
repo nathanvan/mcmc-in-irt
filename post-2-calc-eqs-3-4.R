@@ -1,5 +1,3 @@
-## 2D moments
-
 ## Initialize vectors to hold the results
 ## N.B. choose(n,p) calculates the binomial coefficient
 ##      "n choose p"
@@ -22,11 +20,11 @@ for( which.cmbn in 1:choose(I.items,2) ) {
 
   ## We calculate Equation 3
   theo.2D[which.cmbn] <- integrate(
-                    function(th.dummy) {return(
-                      1/(1+exp(-a.disc[ii]*(th.dummy-b.diff[ii])))
-                      * 1/(1+exp(-a.disc[jj]*(th.dummy-b.diff[jj])))
-                      * dnorm(th.dummy,mean.theta, sqrt(sig2.theta))
-                    )},-Inf, Inf )$value
+               function(th.dummy) {return(
+                 1/(1+exp(-a.disc[ii]*(th.dummy-b.diff[ii])))
+                 * 1/(1+exp(-a.disc[jj]*(th.dummy-b.diff[jj])))
+                 * dnorm(th.dummy,mean.theta, sqrt(sig2.theta))
+               )},-Inf, Inf )$value
   
   ## We calculate Equation 4
   emp.2D[which.cmbn] <- mean(U[,ii]*U[,jj])

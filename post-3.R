@@ -9,8 +9,8 @@ source.setup <- function( code.to.run ) {
   source(paste("http://mcmcinirt.stat.cmu.edu/setup/",code.to.run,sep=""))
 }
 
-source.setup( "post-2-generate-2pl-data-calc-U.R" )
 source.setup( "post-2-generate-2pl-data-set-parameters.R" )
+source.setup( "post-2-generate-2pl-data-calc-U.R" )
 source.setup( "post-2-equate-functions.R" )
 
 ## Clean up
