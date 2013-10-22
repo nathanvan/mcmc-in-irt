@@ -14,9 +14,10 @@ par(mfrow=c(1,2))
   legend( 'topleft', c('True values', ylab), col=c('black', col),
            lty=c('solid','dashed'), bg='white')
    ## Add in the KS test
-  legend( 'bottomright',
-           paste("Kolmogorov-Smirnov p value:",
-             round( ks.test( true.values, estimated.values )$p.value, 2)),
-         bg='white')
+  legend( 
+     'bottomright',
+     paste("Kolmogorov-Smirnov p value:",
+       round( ks.test( true.values, estimated.values )$p.value, 2)),
+     bg='white')
 par(mfrow=c(1,1))
 }
