@@ -14,12 +14,16 @@ run.B <- run.chain.2pl(
     U.data  = U,
     ## Pass in the hyperpriors from Post #1
     hyperpars = hyperpars,
-    ## Use the true values from Post #2 for the initial values
-    th.init = unif(length(theta.abl))*5,
+    ## Generate starting values uniformly from -5 to 5
+    th.init = runif( length(theta.abl), 
+                     min=-5, max=5     ),
+    ## Set the other parameters to their true values 
+    ## from Post #2
     a.init  = a.disc,
     b.init  = b.diff,
     s2.init = sig2.theta,
-    ## Set the person ability proposal variance to 1, the others to NULL
+    ## Set the person ability proposal variance to 1, 
+    ## the others to NULL
     MH.th=1, MH.a=NULL, MH.b=NULL,
     ## Output the acceptance rates
     verbose=TRUE)

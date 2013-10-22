@@ -4,14 +4,6 @@ source("http://mcmcinirt.stat.cmu.edu/setup/post-3.R")
 ## Set the seed to keep results reproducible 
 set.seed(314159)
  
-## Define the hyper parameters as discussed in Post #1
-hyperpars <- list( mu.a         = 1.185,
-                   s2.a         = 1.185,
-                   s2.b         = 100,
-                   alpha.th     = 1,
-                   beta.th      = 1 )
-
-
 ## Run the sampler at the true, simulated values
 ## for 1000 iterations
 run.A <- run.chain.2pl(

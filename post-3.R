@@ -22,6 +22,7 @@ source.setup( "post-2-equate-functions.R" )
 ## From Post 3
 source.setup( "post-3-mh-gibbs-shell-setup.R" )
 source.setup( "post-3-mh-gibbs-shell.R" )
+source.setup( "post-3-mh-gibbs-shell-run-A-setup.R" )
 
 ## Clean up
 rm(source.setup)

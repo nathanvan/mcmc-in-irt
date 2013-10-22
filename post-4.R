@@ -33,6 +33,12 @@ source.setup( "post-2-equate-functions.R" )
 ## From Post 3
 source.setup( "post-3-mh-gibbs-shell-setup.R" )
 source.setup( "post-3-mh-gibbs-shell.R" )
+source.setup( "post-3-mh-gibbs-shell-run-A-setup.R" )
+source.setup( "post-3-get-2pl-params.R")
+
+## From Post 4
+source.setup( "post-4-function-log-prob.R")
+source.setup( "post-4-function-sample-th.R")
 
 ## Clean up
 rm(source.setup)
