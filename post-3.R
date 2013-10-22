@@ -13,7 +13,7 @@ source.setup <- function( code.to.run ) {
 ## Check that the correct packages are loaded
 
 
-
+cat('Attempting to load required packages...\n')
 ## From Post 2
 source.setup( "post-2-generate-2pl-data-set-parameters.R" )
 source.setup( "post-2-generate-2pl-data-calc-U.R" )
