@@ -1,4 +1,3 @@
-## Complete conditional sampler for the person ability parameters
 sample.th <- function(U.data, old) {
  ## Access the current (soon to be old) state  of the chain
  ## N.B. This is vector. All of operations in this function
@@ -17,27 +16,27 @@ sample.th <- function(U.data, old) {
 
  ## Calculate the probablity of accepting the proposal draw
  ## ... N.B. All calculations are done on the log scale to keep
- ##          numerical accuracy when dealing with such small numbers
+ ##          numerical accuracy when dealing with small numbers
  ## ... The acceptance probablity is a function of four things:
  ##
- ## ... ... 1: The complete conditional evaluated at the proposal     
+ ## ... ... 1: The complete conditional at the proposal     
  log.cc.star <- (
      ## ... ... likelihood term
      apply(log.prob(U.data, th.star, old$a, old$b),1,sum)
      ## ... ... prior term
      + log(dnorm(th.star,0,sqrt(old$s2))))
  ##
- ## ... ... 2: The complete conditional evaluated at the "old" value
+ ## ... ... 2: The complete conditional at the old value
  log.cc.old  <- (
      ## ... ... likelihood term
      apply(log.prob(U.data, th.old, old$a, old$b),1,sum)
      ## ... ... prior term 
      + log(dnorm(th.old,0,sqrt(old$s2))))
  ##
- ## ... ... 3: The MH proposal density evaluted at the proposal
+ ## ... ... 3: The MH proposal density at the proposal
  log.prop.star <- log(dnorm(th.star,th.old,MH.th))
  ##   
- ## ... ... 4: The MH proposal density evaluted at the "old" value
+ ## ... ... 4: The MH proposal density at the old value
  log.prop.old  <- log(dnorm(th.old,th.star,MH.th))
  ## 
  ## ... Calculate the acceptance probability on the log scale

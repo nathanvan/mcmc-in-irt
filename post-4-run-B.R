@@ -1,3 +1,6 @@
+## Load the necessary code from previous posts
+source("http://mcmcinirt.stat.cmu.edu/setup/post-4.R")
+
 ## Set the seed to keep results reproducible 
 set.seed(314159)
 
