@@ -4,9 +4,13 @@ sample.th.buggy <- function(U.data, old) {
  P.persons <- length(th.old)
  th.star   <- rnorm(P.persons,th.old,MH.th)
  
- log.cc.star <- apply(log.prob(U.data, th.star, old$a, old$b),1,sum) +
+ log.cc.star <- apply(
+                   log.prob(U.data, th.star, 
+                            old$a, old$b),1,sum) +
                    log(dnorm(th.star,0,sqrt(old$s2)))
- log.cc.old  <- apply(log.prob(U.data, th.old, old$a, old$b),1,sum) +
+ log.cc.old  <- apply(
+                   log.prob(U.data, th.old, 
+                            old$a, old$b),1,sum) +
                    log(dnorm(th.old ,0,sqrt(old$s2))) 
  log.prop.star <- log(dnorm(th.star,th.old,MH.th))
  log.prop.old  <- log(dnorm(th.old,th.star,MH.th))
