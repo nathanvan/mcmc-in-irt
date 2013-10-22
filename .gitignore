@@ -1,0 +1,44 @@
+
+# R related things 
+*.Rproj.user
+*.Rhistory
+*.RData
+*.Rcheck/
+*.R~
+
+# Compressed data
+*.zip
+*.tar.gz
+
+# Images I don't want to track
+*.png
+
+# Emacs files
+\#*\#
+*~
+auto-save-list
+tramp
+.\#*
+# Org-mode
+.org-id-locations
+*_archive
+
+# Latex things
+_region_.tex
+*.aux
+*.bbl
+*.dvi
+*.pdf
+*.PDF
+*.log
+*.cls
+*.sty
+*.blg
+*.nav
+*.out
+*.snm
+*.toc
+*.fff
+*.lof
+*.lot
+*.ttt
