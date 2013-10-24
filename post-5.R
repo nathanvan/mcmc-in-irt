@@ -1,5 +1,5 @@
 ##
-## http://mcmcinirt.stat.cmu.edu/setup/post-4.R
+## http://mcmcinirt.stat.cmu.edu/setup/post-5.R
 ##
 ##
 ## Last update: 24-Oct-2013 by Nathan VanHoudnos
@@ -39,6 +39,13 @@ source.setup( "post-3-get-2pl-params.R")
 cat('  ... from Post 4')
 source.setup( "post-4-function-log-prob.R")
 source.setup( "post-4-function-sample-th.R")
+
+cat('  ... from Post 5')
+source.setup( "post-4-function-sample-th.R")
+source.setup( "post-5-function-mh-sample.R")
+source.setup( "post-5-function-sample-th-refactor.R")
+source.setup( "post-5-function-prop-th-abl.R")
+source.setup( "post-5-function-th-abl-cc.R")
 
 ## Clean up
 rm(source.setup, required.packages)
