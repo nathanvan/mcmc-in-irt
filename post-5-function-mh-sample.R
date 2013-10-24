@@ -39,7 +39,7 @@ mh.sample <- function( U.data, old.state,
         prop$state[[ prop$param.name ]],
         old.state[[  prop$param.name ]])
 
-    ## Step 4: Update the state for acceptance probability calculations
+    ## Step 4: Update the acceptance probability 
     ## ... add the new average acceptance probability
     cur.state$ACC[[ prop$param.name ]]  <- (
        old.state$ACC[[ prop$param.name ]] + mean( acc.new )

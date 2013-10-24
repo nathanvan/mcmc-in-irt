@@ -1,5 +1,6 @@
 ## A snippet of the generic sampler 
-mh.sample <- function( proposal.function
+mh.sample <- function( old.state,
+                       proposal.function
                        ## ... snip ...
                       ) {
     

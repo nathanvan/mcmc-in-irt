@@ -1,0 +1,1 @@
+    name.n <- paste( param.name, ".n", sep="")

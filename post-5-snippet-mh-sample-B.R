@@ -1,7 +1,7 @@
 ## A snippet of the generic sampler 
-mh.sample <- function( cc.log.density,
+mh.sample <- function( U.data, old.state,
+                       cc.log.density,
                        proposal.function
-                       ## ... snip ...
                       ) {
     
     ## Step 1: Call the proposal function
