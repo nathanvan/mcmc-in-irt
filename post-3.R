@@ -5,12 +5,23 @@
 ##
 ## Last update: 24-Oct-2013 by Nathan VanHoudnos
 
-## Setup a function to run scripts
+## Function to load R code
+## ... based off of: 
+##        http://stackoverflow.com/a/12195574/419842
 source.setup <- function( code.to.run ) {
-  source(paste("http://mcmcinirt.stat.cmu.edu/setup/",code.to.run,sep=""))
+  url <- paste("http://mcmcinirt.stat.cmu.edu/setup/",
+               code.to.run,sep="")
+  tryCatch( source(url),
+    error=function(cond) {
+      message(paste("Error with URL:\n\n   ", url,'\n'))
+      message(cond)
+    },
+    warning=function(cond) {
+      message(paste("Error with URL:\n\n   ", url,'\n'))
+      message(cond)
+      message("\n")
+    })
 }
-
-## Check that the correct packages are loaded
 
 
 cat('Attempting to load previous R code...\n')

@@ -7,9 +7,22 @@
 ## Set the required package list
 required.packages <- c("coda")
 
-## Setup a function to run scripts
+## Function to load R code
+## ... based off of: 
+##        http://stackoverflow.com/a/12195574/419842
 source.setup <- function( code.to.run ) {
-  source(paste("http://mcmcinirt.stat.cmu.edu/setup/",code.to.run,sep=""))
+  url <- paste("http://mcmcinirt.stat.cmu.edu/setup/",
+               code.to.run,sep="")
+  tryCatch( source(url),
+    error=function(cond) {
+      message(paste("Error with URL:\n\n   ", url,'\n'))
+      message(cond)
+    },
+    warning=function(cond) {
+      message(paste("Error with URL:\n\n   ", url,'\n'))
+      message(cond)
+      message("\n")
+    })
 }
 
 cat('Attempting to load required packages...\n')

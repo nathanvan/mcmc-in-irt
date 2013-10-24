@@ -1,5 +1,5 @@
 ##
-## http://mcmcinirt.stat.cmu.edu/setup/post-6.R
+## http://mcmcinirt.stat.cmu.edu/setup/post-7.R
 ##
 ##
 ## Last update: 24-Oct-2013 by Nathan VanHoudnos
@@ -51,24 +51,19 @@ source.setup( "post-3-get-2pl-params.R")
 
 cat('  ... from Post 4\n')
 source.setup( "post-4-function-log-prob.R")
-source.setup( "post-4-function-sample-th.R")
 
 cat('  ... from Post 5\n')
-source.setup( "post-4-function-sample-th.R")
 source.setup( "post-5-function-mh-sample.R")
-source.setup( "post-5-function-sample-th-refactor.R")
-##
-cat('  ... ... Implement sample.th.refactor as sample.th\n')
-sample.th <- sample.th.refactor
-rm(sample.th.refactor)
-##
-##
-source.setup( "post-5-function-prop-th-abl.R")
 source.setup( "post-5-function-th-abl-cc.R")
 
 cat('  ... from Post 6\n')
 source.setup( "post-6-function-generic-normal-proposal.R")
-source.setup( "post-6-function-prop-th-abl-refactor.R")
+
+cat('  ... from Post 7\n')
+source.setup( "post-7-function-def-all-proposal.R")
+source.setup( "post-7-function-a-disc-cc.R")
+source.setup( "post-7-function-b-diff-cc.R")
+source.setup( "post-7-function-def-all-mh-cc.R")
 
 ## Clean up
 rm(source.setup, required.packages)
