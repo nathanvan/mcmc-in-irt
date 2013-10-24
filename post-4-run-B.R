@@ -1,4 +1,4 @@
-## Load the necessary code from previous posts
+## Load the necessary code from this and previous posts
 source("http://mcmcinirt.stat.cmu.edu/setup/post-4.R")
 
 ## Set the seed to keep results reproducible 
