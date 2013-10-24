@@ -29,7 +29,8 @@ prop.th.abl <- function( state ) {
     }
     
     ## Return the proposal object
-    ## ... Note that we'll need the name of the parameter later, so return it too
+    ## ... Note that we'll need the name of the parameter later,
+    ##     so return it too
     return( list( param.name='th', state=state,
                   log.density=log.density ))
 }
