@@ -14,12 +14,12 @@ source.setup <- function( code.to.run ) {
 
 
 cat('Attempting to load previous R code...\n')
-cat('  ... from Post 2')
+cat('  ... from Post 2\n')
 source.setup( "post-2-generate-2pl-data-set-parameters.R" )
 source.setup( "post-2-generate-2pl-data-calc-U.R" )
 source.setup( "post-2-equate-functions.R" )
 
-cat('  ... from Post 3')
+cat('  ... from Post 3\n')
 source.setup( "post-3-mh-gibbs-shell-setup.R" )
 source.setup( "post-3-mh-gibbs-shell.R" )
 source.setup( "post-3-mh-gibbs-shell-run-A-setup.R" )

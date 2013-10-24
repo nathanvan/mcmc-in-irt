@@ -25,18 +25,18 @@ for (pkg in required.packages) {
 }
 
 cat('Attempting to load previous R code...\n')
-cat('  ... from Post 2')
+cat('  ... from Post 2\n')
 source.setup( "post-2-generate-2pl-data-set-parameters.R" )
 source.setup( "post-2-generate-2pl-data-calc-U.R" )
 source.setup( "post-2-equate-functions.R" )
 
-cat('  ... from Post 3')
+cat('  ... from Post 3\n')
 source.setup( "post-3-mh-gibbs-shell-setup.R" )
 source.setup( "post-3-mh-gibbs-shell.R" )
 source.setup( "post-3-mh-gibbs-shell-run-A-setup.R" )
 source.setup( "post-3-get-2pl-params.R")
 
-cat('  ... from Post 4')
+cat('  ... from Post 4\n')
 source.setup( "post-4-function-log-prob.R")
 source.setup( "post-4-function-sample-th.R")
 
