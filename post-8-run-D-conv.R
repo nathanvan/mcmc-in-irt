@@ -1,0 +1,1 @@
+run.D.mcmc.conv <- window( run.D.mcmc, start=100)
