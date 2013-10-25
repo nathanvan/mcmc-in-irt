@@ -10,3 +10,4 @@ a.disc.cc <- function( U.data, state ) {
                log=TRUE)
     )
 }
+

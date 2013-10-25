@@ -34,6 +34,7 @@ source.setup( "post-2-generate-2pl-data-calc-U.R" )
 source.setup( "post-2-equate-functions.R" )
 
 cat('  ... from Post 3\n')
+source.setup( "post-3-function-blocked-mcmc-update.R")
 source.setup( "post-3-mh-gibbs-shell-setup.R" )
 source.setup( "post-3-mh-gibbs-shell.R" )
 source.setup( "post-3-mh-gibbs-shell-run-A-setup.R" )

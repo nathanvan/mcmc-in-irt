@@ -41,3 +41,4 @@ generic.normal.proposal <- function( param.name ) {
         }
    )
 }
+
