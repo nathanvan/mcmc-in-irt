@@ -35,7 +35,7 @@ for (pkg in required.packages) {
   } else {
       tmp.msg <- paste('\n The required package "', pkg, '" is not installed on your system. \n', sep="")
       tmp.msg <- paste(tmp.msg, 'Please install it by copying the line below and pasting it\n into your R session: \n\n')
-      tmp.msg <- paste(tmp.msg,'   install.pacakges("',pkg,'")\n\n',sep="")
+      tmp.msg <- paste(tmp.msg,'   install.packages("',pkg,'")\n\n',sep="")
       stop(tmp.msg)
   } 
 }
