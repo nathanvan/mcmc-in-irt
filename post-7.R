@@ -54,6 +54,7 @@ source.setup( "post-3-get-2pl-params.R")
 
 cat('  ... from Post 4\n')
 source.setup( "post-4-function-log-prob.R")
+source.setup( "post-4-function-check-sampler-graph.R")
 
 cat('  ... from Post 5\n')
 source.setup( "post-5-function-mh-sample.R")
