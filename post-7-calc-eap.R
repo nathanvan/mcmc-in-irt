@@ -1,0 +1,1 @@
+all.eap <- apply( run.C.mcmc[200:1000,], MARGIN=2, mean )
