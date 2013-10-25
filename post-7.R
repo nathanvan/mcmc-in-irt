@@ -17,11 +17,14 @@ source.setup <- function( code.to.run ) {
     error=function(cond) {
       message(paste("Error with URL:\n\n   ", url,'\n'))
       message(cond)
+      message("\n")
+      stop("Stopping script.")
     },
     warning=function(cond) {
       message(paste("Error with URL:\n\n   ", url,'\n'))
       message(cond)
       message("\n")
+      stop("Stopping script.")
     })
 }
 
