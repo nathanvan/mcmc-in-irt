@@ -72,6 +72,7 @@ source.setup( "post-7-function-def-all-mh-cc.R")
 
 cat('  ... from Post 8\n')
 source.setup( "post-8-function-sample-s2.R")
+source.setup( "post-8-function-check-sigma.R")
 
 cat('  ... from Post 9\n')
 ## Nothing, but don't want to "miss" it in the output 
