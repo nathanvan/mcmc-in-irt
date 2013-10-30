@@ -1,7 +1,7 @@
 sample.th <- function(U.data, old) {
  ## Access the current (soon to be old) state  of the chain
- ## N.B. This is vector. All of operations in this function
- ##      are on the complete vector insted of element-at-a-time
+ ## N.B. This is vector. All operations in this function
+ ##      are on the complete vector instead of element-at-a-time
  th.old    <- old$th
 
  ## Draw the MH proposal
@@ -14,10 +14,10 @@ sample.th <- function(U.data, old) {
  ##     a fixed variance (MH.th)
  th.star   <- rnorm(P.persons,th.old,MH.th)
 
- ## Calculate the probablity of accepting the proposal draw
+ ## Calculate the probability of accepting the proposal draw
  ## ... N.B. All calculations are done on the log scale to keep
  ##          numerical accuracy when dealing with small numbers
- ## ... The acceptance probablity is a function of four things:
+ ## ... The acceptance probability is a function of four things:
  ##
  ## ... ... 1: The complete conditional at the proposal     
  log.cc.star <- (
@@ -51,7 +51,7 @@ sample.th <- function(U.data, old) {
  cur          <- old   
  cur$th       <- ifelse(acc.new==1, th.star, th.old)
 
- ## Calculate acceptance probablities (for tuning)
+ ## Calculate acceptance probabilities (for tuning)
  cur$ACC$th   <- old$ACC$th + mean( acc.new )
  cur$ACC$th.n <-  cur$ACC$th.n + 1
  
