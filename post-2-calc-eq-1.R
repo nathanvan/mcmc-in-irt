@@ -1,5 +1,5 @@
 ## 1 Dimensional moments
-## Intialize a vector to hold the results
+## Initialize a vector to hold the results
 theo.1D <- rep(NA, I.items)
 
 ## Loop over each item
