@@ -1,8 +1,8 @@
 ##
-## http://mcmcinirt.stat.cmu.edu/setup/post-8.R
+## http://mcmcinirt.stat.cmu.edu/setup/post-9.R
 ##
 ##
-## Last update: 25-Oct-2013 by Nathan VanHoudnos
+## Last update: 7-July-2014 by Nathan VanHoudnos
 
 ## Set the required package list
 required.packages <- c("coda")
