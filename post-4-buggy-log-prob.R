@@ -5,6 +5,6 @@ log.prob.buggy <- function(U.data, th, a, b) {
                 byrow=TRUE)
   P.prob <- plogis(term.1 - term.2) 
  
-  log.bernoulli <- U.data*log(P.prob) + (1-U.data)*log(1-P.prob)
+  log.bernoulli <- log(P.prob^U.data) + log((1-P.prob)^(1-U.data))
   return(log.bernoulli)
 }
