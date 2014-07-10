@@ -12,6 +12,11 @@ mclapply.windows <- function(...) {
    })
 }
 
+## Warn the user if they are using Windows
+if( Sys.info()[['sysname']] == 'Windows' ){
+    warning("parallel::mclapply modified for this R session.")
+}
+
 ## If the OS is Windows, set mclapply to the
 ## the hackish version. Otherwise, leave the
 ## definition alone. 
