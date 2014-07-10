@@ -14,7 +14,17 @@ mclapply.windows <- function(...) {
 
 ## Warn the user if they are using Windows
 if( Sys.info()[['sysname']] == 'Windows' ){
-    warning("parallel::mclapply modified for this R session.")
+    warning(paste(
+      "   *** Microsoft Windows detected ***\n",
+      "   \n",
+      "   For technical reasons, the MS Windows version of mclapply()\n",
+      "   is implemented as a serial function instead of a parallel\n",
+      "   function.",
+      "   \n\n",
+      "   As a quick hack, we replace this serial version of mclapply()\n",
+      "   with a wrapper to parLapply(). See 'mclapply.windows' for \n",
+      "   details.",
+      "   \n\n"))
 }
 
 ## If the OS is Windows, set mclapply to the
