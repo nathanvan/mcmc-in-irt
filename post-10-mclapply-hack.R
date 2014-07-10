@@ -14,7 +14,8 @@ mclapply.windows <- function(...) {
 
 ## Warn the user if they are using Windows
 if( Sys.info()[['sysname']] == 'Windows' ){
-    warning(paste(
+    message(paste(
+      "\n", 
       "   *** Microsoft Windows detected ***\n",
       "   \n",
       "   For technical reasons, the MS Windows version of mclapply()\n",
@@ -22,9 +23,9 @@ if( Sys.info()[['sysname']] == 'Windows' ){
       "   function.",
       "   \n\n",
       "   As a quick hack, we replace this serial version of mclapply()\n",
-      "   with a wrapper to parLapply(). See 'mclapply.windows' for \n",
-      "   details.",
-      "   \n\n"))
+      "   with a wrapper to parLapply() for this R session. Please see\n\n",
+      "      http://mcmcinirt.stat.cmu.edu \n\n",
+      "   for details.\n\n"))
 }
 
 ## If the OS is Windows, set mclapply to the
