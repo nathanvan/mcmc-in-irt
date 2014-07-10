@@ -1,6 +1,17 @@
 ## Define a hackish version of mclapply for Windows
 mclapply.windows <- function(...) {
  cl <- makeCluster( detectCores() )
+
+ ## Export the state of the R environment to the workers
+ this.env <- environment()
+ while( identical( this.env, globalenv() ) == FALSE ) {
+    clusterExport(cl, ls(all.names=TRUE, env=this.env),
+                         envir=this.env)
+    this.env <- parent.env(environment())
+ }
+ clusterExport(cl, ls(all.names=TRUE, env=globalenv()),
+                   envir=globalenv())
+
  tryCatch({
    val <- parLapply(cl, ...)
    return(val)
