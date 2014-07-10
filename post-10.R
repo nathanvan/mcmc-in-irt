@@ -2,10 +2,10 @@
 ## http://mcmcinirt.stat.cmu.edu/setup/post-10.R
 ##
 ##
-## Last update: 7-July-2014 by Nathan VanHoudnos
+## Last update: 10-July-2014 by Nathan VanHoudnos
 
 ## Set the required package list
-required.packages <- c("coda")
+required.packages <- c("coda","parallel")
 
 ## Function to load R code
 ## ... based off of: 
@@ -78,7 +78,8 @@ cat('  ... from Post 9\n')
 ## Nothing, but don't want to "miss" it in the output 
 
 cat('  ... from Post 10\n')
-## Nothing, but don't want to "miss" it in the output 
+source.setup( "post-10-mclapply-hack.R")
+
 
 ## Clean up
 rm(source.setup, required.packages)
