@@ -1,8 +1,9 @@
 ## Define a hackish version of mclapply for Windows
-## Now we need wrap all of this in a function
 mclapply.hack <- function(...) {
     ## Create a cluster
-    cl <- makeCluster( detectCores() )
+    ## ... How many workers do you need?
+    size.of.list <- length(list(...)[[1]])
+    cl <- makeCluster( min(size.of.list, detectCores()) )
 
     ## Find out the loaded packages 
     loaded.package.names <- c(
@@ -12,16 +13,9 @@ mclapply.hack <- function(...) {
         names( sessionInfo()$otherPkgs ))
 
     tryCatch( {
-       ## Modify the function to apply with the "header"
-       ## needed to load R packages 
-       tmp.function <- list(...)[[2]]
-       tmp.function <- trace( tmp.function,
-              quote(lapply(loaded.package.names, function(xx) {
-                 require(xx , character.only=TRUE)})),
-             at=c(1))
 
-       ## Export every variable in every environment that is
-       ## in scope.
+       ## Copy over all of the objects within scope to
+       ## all clusters. 
        this.env <- environment()
        while( identical( this.env, globalenv() ) == FALSE ) {
            clusterExport(cl,
@@ -31,10 +25,16 @@ mclapply.hack <- function(...) {
        }
        clusterExport(cl,
                      ls(all.names=TRUE, env=globalenv()),
-                     envir=globalenv())       
+                     envir=globalenv())
+       
+       ## Load the libraries on all the clusters
+       parLapply( cl, 1:length(cl), function(xx){
+           lapply(loaded.package.names, function(yy) {
+               require(yy , character.only=TRUE)})
+       })
        
        ## Run the lapply in parallel 
-       return( parLapply( cl, list(...)[[1]], tmp.function ) )
+       return( parLapply( cl, ...) )
     }, finally = {        
        ## Stop the cluster
        stopCluster(cl)
