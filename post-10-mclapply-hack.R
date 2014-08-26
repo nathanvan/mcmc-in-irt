@@ -5,20 +5,23 @@
 ## nathanvan AT northwestern FULL STOP edu
 ## July 14, 2014
 ##
-## A script to implement a hackish version of 
+## A script to implement a hackish version of
 ## parallel:mclapply() on Windows machines.
 ## On Linux or Mac, the script has no effect
-## beyond loading the parallel library. 
+## beyond loading the parallel library.
 
-require(parallel)    
+require(parallel)
 
 ## Define the hack
-mclapply.hack <- function(...) {
+mclapply.hack <- function(..., mc.cores=NULL) {
     ## Create a cluster
-    size.of.list <- length(list(...)[[1]])
-    cl <- makeCluster( min(size.of.list, detectCores()) )
+    if( is.null(mc.cores) ) {
+         size.of.list <- length(list(...)[[1]])
+         mc.cores <- min(size.of.list, detectCores())
+     }
+    cl <- makeCluster( mc.cores )
 
-    ## Find out the names of the loaded packages 
+    ## Find out the names of the loaded packages
     loaded.package.names <- c(
         ## Base packages
         sessionInfo()$basePkgs,
@@ -28,7 +31,7 @@ mclapply.hack <- function(...) {
     tryCatch( {
 
        ## Copy over all of the objects within scope to
-       ## all clusters. 
+       ## all clusters.
        this.env <- environment()
        while( identical( this.env, globalenv() ) == FALSE ) {
            clusterExport(cl,
@@ -39,17 +42,17 @@ mclapply.hack <- function(...) {
        clusterExport(cl,
                      ls(all.names=TRUE, env=globalenv()),
                      envir=globalenv())
-       
+
        ## Load the libraries on all the clusters
        ## N.B. length(cl) returns the number of clusters
        parLapply( cl, 1:length(cl), function(xx){
            lapply(loaded.package.names, function(yy) {
                require(yy , character.only=TRUE)})
        })
-       
-       ## Run the lapply in parallel 
+
+       ## Run the lapply in parallel
        return( parLapply( cl, ...) )
-    }, finally = {        
+    }, finally = {
        ## Stop the cluster
        stopCluster(cl)
     })
@@ -58,7 +61,7 @@ mclapply.hack <- function(...) {
 ## Warn the user if they are using Windows
 if( Sys.info()[['sysname']] == 'Windows' ){
     message(paste(
-      "\n", 
+      "\n",
       "   *** Microsoft Windows detected ***\n",
       "   \n",
       "   For technical reasons, the MS Windows version of mclapply()\n",
@@ -73,9 +76,9 @@ if( Sys.info()[['sysname']] == 'Windows' ){
 
 ## If the OS is Windows, set mclapply to the
 ## the hackish version. Otherwise, leave the
-## definition alone. 
+## definition alone.
 mclapply <- switch( Sys.info()[['sysname']],
-   Windows = {mclapply.hack}, 
+   Windows = {mclapply.hack},
    Linux   = {mclapply},
    Darwin  = {mclapply})
 
