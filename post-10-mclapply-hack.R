@@ -4,6 +4,7 @@
 ## Nathan VanHoudnos
 ## nathanvan AT northwestern FULL STOP edu
 ## July 14, 2014
+## Last Edit:  August 26, 2014
 ##
 ## A script to implement a hackish version of
 ## parallel:mclapply() on Windows machines.
@@ -19,7 +20,10 @@ mclapply.hack <- function(..., mc.cores=NULL) {
          size.of.list <- length(list(...)[[1]])
          mc.cores <- min(size.of.list, detectCores())
      }
-    cl <- makeCluster( mc.cores )
+    ## N.B. setting outfile to blank redirects output to
+    ##      the master console, as is the default with
+    ##      mclapply() on Linux / Mac
+    cl <- makeCluster( mc.cores, outfile="" )
 
     ## Find out the names of the loaded packages
     loaded.package.names <- c(
