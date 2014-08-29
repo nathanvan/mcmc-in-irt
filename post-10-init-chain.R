@@ -15,7 +15,8 @@ init.chain <- function( seed.value, P.persons, I.items,
 
     ## Create the initial values as named list 
     vals <- c( theta.init, a.init, b.init, s2.init )
-    names(vals) <- get.2pl.params(1:P.persons, 1:I.items, 1:I.items, 1) 
+    names(vals) <- get.2pl.params(1:P.persons, 
+                                  1:I.items, 1:I.items, 1) 
 
     return(vals)            
 }
