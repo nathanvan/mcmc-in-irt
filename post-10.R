@@ -79,6 +79,9 @@ cat('  ... from Post 9\n')
 
 cat('  ... from Post 10\n')
 source.setup( "post-10-mclapply-hack.R")
+source.setup( "post-10-function-run-chain-2pl-list.R")
+source.setup( "post-10-function-get-all.R")
+source.setup( "post-10-function-init-chain.R")
 
 ## Clean up
 rm(source.setup, required.packages)
