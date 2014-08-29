@@ -2,7 +2,7 @@
 ## http://mcmcinirt.stat.cmu.edu/setup/post-10.R
 ##
 ##
-## Last update: 10-July-2014 by Nathan VanHoudnos
+## Last update: 29-August-2014 by Nathan VanHoudnos
 
 ## Set the required package list
 required.packages <- c("coda","parallel")
@@ -79,7 +79,6 @@ cat('  ... from Post 9\n')
 
 cat('  ... from Post 10\n')
 source.setup( "post-10-mclapply-hack.R")
-
 
 ## Clean up
 rm(source.setup, required.packages)
