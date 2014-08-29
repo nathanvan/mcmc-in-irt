@@ -12,4 +12,4 @@ source("http://mcmcinirt.stat.cmu.edu/setup/post-10-mclapply-hack.R")
 system.time( par.output <- mclapply( 1:4, wait.then.square,
                                      mc.cores=4             ) )
 ##  user  system elapsed 
-## 0.008   0.000   1.008 
+## 0.008   0.000   10.020 
