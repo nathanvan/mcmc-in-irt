@@ -1,4 +1,4 @@
-source("http://mcmcinirt.stat.cmu.edu/setup/post-10-mclapply-hack.R")
+source("http://edustatistics.org/mcmcinirt/setup/post-10-mclapply-hack.R")
 ##
 ##  *** Microsoft Windows detected ***
 ##  

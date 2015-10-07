@@ -1,5 +1,5 @@
 ## Load the necessary code from this and previous posts
-source("http://mcmcinirt.stat.cmu.edu/setup/post-8.R")
+source("http://edustatistics.org/mcmcinirt/setup/post-8.R")
 
 ## Reset the item sampler to dummy samplers
 sample.a <- dummy.cc.sampler

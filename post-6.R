@@ -1,5 +1,5 @@
 ##
-## http://mcmcinirt.stat.cmu.edu/setup/post-6.R
+## http://edustatistics.org/mcmcinirt/setup/post-6.R
 ##
 ##
 ## Last update: 24-Oct-2013 by Nathan VanHoudnos
@@ -11,7 +11,7 @@ required.packages <- c("coda")
 ## ... based off of: 
 ##        http://stackoverflow.com/a/12195574/419842
 source.setup <- function( code.to.run ) {
-  url <- paste("http://mcmcinirt.stat.cmu.edu/setup/",
+  url <- paste("http://edustatistics.org/mcmcinirt/setup/",
                code.to.run,sep="")
   tryCatch( source(url),
     error=function(cond) {

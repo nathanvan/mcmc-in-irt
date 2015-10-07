@@ -1,5 +1,5 @@
 ## Load the necessary code from this and previous posts
-source('http://mcmcinirt.stat.cmu.edu/setup/post-5.R')
+source('http://edustatistics.org/mcmcinirt/setup/post-5.R')
 
 ## Check that we are using the Post 4
 ## version of sample.th

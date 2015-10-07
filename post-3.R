@@ -1,5 +1,5 @@
 ##
-## http://mcmcinirt.stat.cmu.edu/setup/post-3.R
+## http://edustatistics.org/mcmcinirt/setup/post-3.R
 ##
 ## This is the code from Post 2, necessary to setup Post 3
 ##
@@ -9,7 +9,7 @@
 ## ... based off of: 
 ##        http://stackoverflow.com/a/12195574/419842
 source.setup <- function( code.to.run ) {
-  url <- paste("http://mcmcinirt.stat.cmu.edu/setup/",
+  url <- paste("http://edustatistics.org/mcmcinirt/setup/",
                code.to.run,sep="")
   tryCatch( source(url),
     error=function(cond) {

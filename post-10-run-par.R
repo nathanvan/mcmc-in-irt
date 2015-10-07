@@ -1,5 +1,5 @@
 ## Load the necessary code from this and previous posts
-source("http://mcmcinirt.stat.cmu.edu/setup/post-10.R")
+source("http://edustatistics.org/mcmcinirt/setup/post-10.R")
 
 ## Define the hyper parameters to values from Post 1
 hyperpars <- list( mu.a         = 1.185,

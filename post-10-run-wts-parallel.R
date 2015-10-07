@@ -3,7 +3,7 @@
 ##   (ii) if the current R session is running on a Windows
 ##        machine, it implements a custom version of
 ##        parallel:mclapply(). 
-source("http://mcmcinirt.stat.cmu.edu/setup/post-10-mclapply-hack.R")
+source("http://edustatistics.org/mcmcinirt/setup/post-10-mclapply-hack.R")
 
 ## Note two changes to the wait.then.square call: 
 ##   (i)   lapply becomes mclapply, and 

@@ -1,5 +1,5 @@
 ## Load the necessary code from this and previous posts
-source('http://mcmcinirt.stat.cmu.edu/setup/post-6.R')
+source('http://edustatistics.org/mcmcinirt/setup/post-6.R')
 
 ## Check that we have the version from Post 4. 
 head(prop.th.abl)                                                    
